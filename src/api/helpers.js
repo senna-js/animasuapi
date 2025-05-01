@@ -8,7 +8,7 @@ const getCards = (body) => {
     const slug = el.find('div.bsx a').attr('href').split('/')[4];
     const type = el.find('div.bsx a div.limit div.typez').text().trim();
     const episode = el.find('div.bsx a div.limit div.bt span.epx').text().trim();
-    const img = el.find('div.bsx a div.limit img.lazy').attr('data-src');
+    const img = el.find('div.bsx a div.limit img').attr('data-src');
     const status = el.find('div.bsx a div.limit div.bt span.sb').text() || null;
 
     cards.push({
