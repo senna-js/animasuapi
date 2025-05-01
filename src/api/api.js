@@ -31,9 +31,9 @@ const animeDetails = async (slug) => {
   
     $('div.bigcontent').each((index, element) => {
       const el = $(element);
-      const img = el.find('div.thumb img:first-child').attr('data-src');
+      const img = el.find('div.thumb img').attr('src');
       const title = el.find('div.infox h1').text().trim();
-      const name = el.find('div.infox span.alter').text().trim();
+      const name = el.find('div.infox div.sepele').text().trim();
       const status = el.find('div.infox div.spe span b:contains("Status:")').first().parent().text().replace('Status: ', '');
       const type = el.find('div.infox div.spe span b:contains("Jenis:")').first().parent().text().replace('Jenis: ', '');
       const release = el.find('div.infox div.spe span b:contains("Rilis:")').first().parent().text().replace('Rilis: ', '');
@@ -95,7 +95,7 @@ const animeEpisode = async (slug) => {
     
     $('div.postbody article').each((index, element) => {
       const el = $(element);
-      const img = el.find('div.meta div.tb img').attr('data-src');
+      const img = el.find('div.item.meta div.tb img').attr('src');
       const title = el.find('div.meta div.lm h1').text().trim();
       const name = el.find('div.meta div.lm span.epx a:first-child').text().trim();
       const slug = el.find('div.meta div.lm span.epx a:first-child').attr('href').split('/')[4];
